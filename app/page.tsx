@@ -1,4 +1,4 @@
-import { unstable_cacheTag } from "next/cache";
+import { unstable_cache } from "next/cache";
 import Link from "next/link";
 import { Suspense } from "react";
 
@@ -17,13 +17,24 @@ export default async function Home() {
   );
 }
 
-async function SuspenseComponent() {
-  return <p>{await getRandomNumber()}</p>
-}
-
-async function getRandomNumber() {
-  "use cache"
-  unstable_cacheTag("randomNumber")
+const getCached = unstable_cache(async () => {
   await new Promise(resolve => setTimeout(resolve, 3000))
   return Math.random()
+},
+  ["randomNumber"],
+  {
+    tags: ["randomNumber"],
+    revalidate: 3600,
+  }
+)
+
+async function SuspenseComponent() {
+  return <p>{await getCached()}</p>
 }
+
+// async function getRandomNumber() {
+// "use cache"
+// unstable_cacheTag("randomNumber")
+// await new Promise(resolve => setTimeout(resolve, 3000))
+// return Math.random()
+// }
