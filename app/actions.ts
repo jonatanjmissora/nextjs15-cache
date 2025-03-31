@@ -1,7 +1,10 @@
 "use server"
 
 import { revalidateTag } from "next/cache"
+import { redirect } from "next/navigation"
 
 export async function revalidateTagAction() {
-  revalidateTag("randomNumber")
+  "use server"
+    revalidateTag("randomNumber")
+    redirect("/")
 }
