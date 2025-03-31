@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Suspense } from "react";
-import NumberContainer from "./components/NumberContainer";
 import NotesContainer from "./components/NotesContainer";
 
 export default async function Home() {
