@@ -1,16 +1,24 @@
 import Link from "next/link";
-import { revalidateTagAction } from "../actions";
+import { revalidateJsonUsersTagAction, revalidateNotesTagAction, revalidateRandomNumberTagAction } from "../actions";
 
 export default function page() {
 
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="grid grid-rows-[20px_1fr_20px] items-center container mx-auto w-8xl">
       <div className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <form className="flex flex-col gap-2" action={revalidateTagAction}>
-          <h2 className="text-2xl">Form :</h2>
-          <button className="border p-3">revalidateTag</button>
+        <div className="flex items-center gap-12">
+          <Link className="border rounded-lg p-3" href={"/"}>&lt;==</Link>
+          <span className="text-2xl">Form :</span>
+        </div>
+        <form className="flex flex-col gap-2" action={revalidateNotesTagAction}>
+          <button className="border rounded-lg p-3">revalidate Notes Tag</button>
         </form>
-        <Link className="border p-3" href={"/"}>Volver</Link>
+        <form className="flex flex-col gap-2" action={revalidateRandomNumberTagAction}>
+          <button className="border rounded-lg p-3">revalidate Random Number Tag</button>
+        </form>
+        <form className="flex flex-col gap-2" action={revalidateJsonUsersTagAction}>
+          <button className="border rounded-lg p-3">revalidate Json Users Tag</button>
+        </form>
       </div>
     </div>
   )
