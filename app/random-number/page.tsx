@@ -4,8 +4,8 @@ import { Suspense } from "react";
 
 export default function RandomNumberPage() {
   return (
-    <div className="container mx-auto w-8xl">
-      <main className="flex flex-col items-start gap-6">
+    <div className="container mx-auto w-5xl 2xl:w-8xl">
+      <main className="flex flex-col items-center gap-6">
       <div className="flex items-center gap-10">
           <span className="text-3xl font-bold">Random Number</span>
           <span>"{"<"}Suspense{">"} y un getRandomNumber() con un unstable_cache"</span>
