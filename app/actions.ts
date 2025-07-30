@@ -17,3 +17,8 @@ export async function revalidateJsonUsersTagAction() {
   revalidateTag("json-users")
   redirect("/placeholder-users")
 }
+
+export async function revalidateAssetsTagAction() {
+  revalidateTag("assets")
+  redirect("/cloudinary")
+}

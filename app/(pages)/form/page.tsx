@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { revalidateJsonUsersTagAction, revalidateNotesTagAction, revalidateRandomNumberTagAction } from "../actions";
+import { revalidateAssetsTagAction, revalidateJsonUsersTagAction, revalidateNotesTagAction, revalidateRandomNumberTagAction } from "../../actions";
 
 export default function page() {
 
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center container mx-auto w-8xl">
-      <div className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+    <div className="container mx-auto w-5xl 2xl:w-8xll">
+      <div className="flex flex-col gap-[32px] row-start-2 items-center">
         <div className="flex items-center gap-12">
           <Link className="border rounded-lg p-3" href={"/"}>&lt;==</Link>
           <span className="text-2xl">Form :</span>
@@ -18,6 +18,9 @@ export default function page() {
         </form>
         <form className="flex flex-col gap-2" action={revalidateJsonUsersTagAction}>
           <button className="border rounded-lg p-3">revalidate Json Users Tag</button>
+        </form>
+        <form className="flex flex-col gap-2" action={revalidateAssetsTagAction}>
+          <button className="border rounded-lg p-3">revalidate Assets Tag</button>
         </form>
       </div>
     </div>

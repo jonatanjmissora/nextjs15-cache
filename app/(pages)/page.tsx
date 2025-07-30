@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Suspense } from "react";
-import { getMongoNotes } from "./data/get-mongo-notes";
-import { MongoNoteType } from "./lib/types";
+import { getMongoNotes } from "../data/get-mongo-notes";
+import { MongoNoteType } from "../lib/types";
 
 export default function Home() {
 
@@ -29,11 +29,11 @@ export default function Home() {
       <div className="flex flex-col w-full">
         {notes.map((note) => (
           <div key={note._id} className="text-xs 2xl:text-lg p-2 flex justify-between gap-2 w-full">
-            <span className="font-bold">title:</span> {note.title}
-            <span className="font-bold">content:</span> {note.content}
-            <span className="font-bold">author:</span> {note.author}
-            <span className="font-bold">pinned:</span> {note.pinned ? "Pinned" : "Not Pinned"}
-            <span className="font-bold">id:</span> {note._id}
+            <span className="font-bold">title: {note.title}</span> 
+            <span className="font-bold">content: {note.content}</span>
+            <span className="font-bold">author: {note.author}</span>
+            <span className="font-bold">pinned: {note.pinned ? "Pinned" : "Not Pinned"}</span>
+            <span className="font-bold">id: {note._id}</span>
           </div>
         ))}
       </div>

@@ -10,7 +10,8 @@ export default function Header() {
     <header className="w-full flex justify-center gap-4 p-8">
         <Link href="/" className={pathname === "/" ? "font-bold border-b-2" : ""}>Mongo DB</Link>
         <Link href="/random-number" className={pathname === "/random-number" ? "font-bold border-b-2" : ""}>Random Number</Link>
-        <Link href="/placeholder-notes" className={pathname === "/placeholder-notes" ? "font-bold border-b-2" : ""}>Placeholder Notes</Link>
+        <Link href="/placeholder-users" className={pathname === "/placeholder-users" ? "font-bold border-b-2" : ""}>Placeholder Users</Link>
+        <Link href="/cloudinary" className={pathname === "/cloudinary" ? "font-bold border-b-2" : ""}>Cloudinary</Link>
       </header>
   )
 }
