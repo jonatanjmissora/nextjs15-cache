@@ -6,6 +6,11 @@ export type MongoNoteType = {
     pinned: boolean;
   }
 
+  export type Cloudinary = {
+    public_id: string
+    display_name: string
+  }
+
   export type JsonUserType = {
     id: number;
     name: string;
