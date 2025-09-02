@@ -7,7 +7,7 @@ export const SWRProvider = ({ children }: { children: React.ReactNode }) => {
 		<SWRConfig
 			value={{
 				refreshInterval: 15000,
-				// revalidateOnMount: false,
+				revalidateOnMount: false,
 				revalidateOnFocus: false,
 			}}
 		>

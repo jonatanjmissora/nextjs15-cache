@@ -1,14 +1,14 @@
 "use client"
 
-import { getMongoNotes } from "@/app/data/get-mongo-notes"
-import { MongoNoteType } from "@/app/lib/types"
+import { getJoke } from "@/app/data/get-joke"
+import { JokeType } from "@/app/lib/types"
 import useSWR, { mutate } from "swr"
 import { LoaderSpinner } from "../loader-spinner"
 
-export default function SwrMongoDb() {
-	const { data, error, isValidating } = useSWR<MongoNoteType[]>(
-		"swr-mongodb",
-		getMongoNotes as () => Promise<MongoNoteType[]>
+export default function SwrJoke() {
+	const { data, error, isValidating } = useSWR(
+		"swr-joke",
+		getJoke as () => Promise<JokeType>
 	)
 
 	return (
@@ -18,19 +18,16 @@ export default function SwrMongoDb() {
 				{isValidating && <LoaderSpinner />}
 				<button
 					className="border rounded-lg p-3"
-					onClick={() => mutate("swr-mongodb")}
+					onClick={() => mutate("swr-joke")}
 				>
 					revalidate
 				</button>
 			</div>
 			{/* si haces fallback en SWRConfig, no pongas el loading */}
-			{/* {isLoading && <p>Loading SWR MongoDb</p>} */}
+			{/* {isLoading && <p>Loading SWR Joke</p>} */}
 			{error && <p>Error: {error.message}</p>}
-			{data?.map(note => (
-				<span key={note._id} className="font-bold">
-					title: {note.title}
-				</span>
-			))}
+			<p className="font-bold">{data?.setup}</p>
+			<p className="font-bold">{data?.punchline}</p>
 		</div>
 	)
 }

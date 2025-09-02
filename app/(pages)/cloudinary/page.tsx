@@ -2,6 +2,8 @@ import { Suspense } from "react"
 import SimpleFetchCloudinary from "@/app/components/cloudinary/simple-fetch-cloudinary"
 import UnestableCacheCloudinary from "@/app/components/cloudinary/unestable-cache-cloudinary"
 import SwrCloudinary from "@/app/components/cloudinary/swr-cloudinary"
+import { SWRConfig } from "swr"
+import { getCloudinary } from "@/app/data/get-assets"
 
 export default function CloudinaryPage() {
 	return (
@@ -15,7 +17,15 @@ export default function CloudinaryPage() {
 					<UnestableCacheCloudinary />
 				</Suspense>
 
-				<SwrCloudinary />
+				<SWRConfig
+					value={{
+						fallback: {
+							"swr-cloudinary": getCloudinary(),
+						},
+					}}
+				>
+					<SwrCloudinary />
+				</SWRConfig>
 
 				{/* <TankStackQueryMongoDb /> */}
 			</main>
