@@ -1,5 +1,6 @@
 import SimpleFetchRandomNumber from "@/app/components/random-number/simple-fetch-random-number"
 import SwrRandomNumber from "@/app/components/random-number/swr-random-number"
+import TanStackQueryRandomNumber from "@/app/components/random-number/tanstack-query-random-number"
 import { UnestableCachedRandomNumber } from "@/app/components/random-number/unestable-cache-random-number"
 import { getRandomNumber } from "@/app/data/get-random-number"
 import { Suspense } from "react"
@@ -27,7 +28,7 @@ export default function RandomNumberPage() {
 					<SwrRandomNumber />
 				</SWRConfig>
 
-				{/* <TankStackQueryMongoDb /> */}
+				<TanStackQueryRandomNumber />
 			</main>
 		</div>
 	)

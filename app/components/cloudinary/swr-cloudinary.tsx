@@ -1,11 +1,10 @@
 "use client"
 
-import { getCloudinary } from "@/app/data/get-assets"
-import useSWR, { mutate } from "swr"
 import { LoaderSpinner } from "../loader-spinner"
+import useGetSwrCloudinary from "@/app/data/swr/use-get-swr-cloudinary"
 
 export default function SwrCloudinary() {
-	const { data, error, isValidating } = useSWR("swr-cloudinary", getCloudinary)
+	const { data, error, isValidating, mutate } = useGetSwrCloudinary()
 
 	return (
 		<div className="flex flex-col gap-1 w-full border">
@@ -21,7 +20,7 @@ export default function SwrCloudinary() {
 			</div>
 			{/* si haces fallback en SWRConfig, no pongas el loading */}
 			{/* {isLoading && <p>Loading SWR Cloudinary</p>} */}
-			{error && <p>Error: {error.message}</p>}
+			{error || (!data?.success && <p>Error: {error?.message}</p>)}
 			{data?.response.map(asset => (
 				<span key={asset.public_id} className="font-bold">
 					name: {asset.display_name}

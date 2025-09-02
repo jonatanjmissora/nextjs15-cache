@@ -1,15 +1,10 @@
 "use client"
 
-import { getJsonUser } from "@/app/data/get-json-user"
-import { JsonUserType } from "@/app/lib/types"
-import useSWR, { mutate } from "swr"
+import useGetSwrJsonUsers from "@/app/data/swr/use-get-swr-json-users"
 import { LoaderSpinner } from "../loader-spinner"
 
 export default function SwrJsonUsers() {
-	const { data, error, isValidating } = useSWR(
-		"swr-json-users",
-		getJsonUser as () => Promise<JsonUserType[]>
-	)
+	const { data, error, isValidating, mutate } = useGetSwrJsonUsers()
 
 	return (
 		<div className="flex flex-col gap-1 w-full border">

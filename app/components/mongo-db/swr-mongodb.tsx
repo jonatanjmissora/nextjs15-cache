@@ -1,15 +1,10 @@
 "use client"
 
-import { getMongoNotes } from "@/app/data/get-mongo-notes"
-import { MongoNoteType } from "@/app/lib/types"
-import useSWR, { mutate } from "swr"
 import { LoaderSpinner } from "../loader-spinner"
+import useGetSwrMongoNotes from "@/app/data/swr/use-get-swr-mongodb"
 
 export default function SwrMongoDb() {
-	const { data, error, isValidating } = useSWR<MongoNoteType[]>(
-		"swr-mongodb",
-		getMongoNotes as () => Promise<MongoNoteType[]>
-	)
+	const { data, error, isValidating, mutate } = useGetSwrMongoNotes()
 
 	return (
 		<div className="flex flex-col gap-1 w-full border">

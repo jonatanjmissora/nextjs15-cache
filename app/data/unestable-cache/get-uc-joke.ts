@@ -3,7 +3,7 @@ import { getJoke } from "../get-joke"
 
 export const getCachedJoke = unstable_cache(
 	async () => {
-		console.log("unstable_cache")
+		console.log("unstable_cache: getting fresh data")
 		return await getJoke()
 	},
 	["joke"],

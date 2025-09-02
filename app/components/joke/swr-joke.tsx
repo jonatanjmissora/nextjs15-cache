@@ -1,15 +1,10 @@
 "use client"
 
-import { getJoke } from "@/app/data/get-joke"
-import { JokeType } from "@/app/lib/types"
-import useSWR, { mutate } from "swr"
 import { LoaderSpinner } from "../loader-spinner"
+import useGetSwrJoke from "@/app/data/swr/use-get-swr-joke"
 
 export default function SwrJoke() {
-	const { data, error, isValidating } = useSWR(
-		"swr-joke",
-		getJoke as () => Promise<JokeType>
-	)
+	const { data, error, isValidating, mutate } = useGetSwrJoke()
 
 	return (
 		<div className="flex flex-col gap-1 w-full border">

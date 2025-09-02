@@ -1,14 +1,10 @@
 "use client"
 
-import { getRandomNumber } from "@/app/data/get-random-number"
-import useSWR, { mutate } from "swr"
 import { LoaderSpinner } from "../loader-spinner"
+import useGetSwrRandomNumber from "@/app/data/swr/use-get-swr-random-number"
 
 export default function SwrRandomNumber() {
-	const { data, error, isValidating } = useSWR(
-		"swr-random-number",
-		getRandomNumber
-	)
+	const { data, error, isValidating, mutate } = useGetSwrRandomNumber()
 
 	return (
 		<div className="flex flex-col gap-1 w-full border">
