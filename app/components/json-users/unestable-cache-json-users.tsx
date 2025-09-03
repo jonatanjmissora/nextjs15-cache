@@ -9,7 +9,7 @@ async function UnestableCachedJsonUsers() {
     <div className="flex flex-col gap-1 w-full border">
         <span className="text-xl font-bold">Unestable Cache</span>
         {users.map((user) => (
-            <span key={user.id} className="font-bold">name: {user.name}</span> 
+            <span key={user.id} className="font-bold">{user.name}</span> 
         ))}
       </div>
   )

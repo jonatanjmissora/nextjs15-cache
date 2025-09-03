@@ -23,7 +23,7 @@ export default function SwrMongoDb() {
 			{error && <p>Error: {error.message}</p>}
 			{data?.map(note => (
 				<span key={note._id} className="font-bold">
-					title: {note.title}
+					{note.title}
 				</span>
 			))}
 		</div>

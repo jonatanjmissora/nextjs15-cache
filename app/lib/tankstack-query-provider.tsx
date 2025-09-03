@@ -9,8 +9,11 @@ function TanStackQueryProvider({ children }: { children: React.ReactNode }) {
 			new QueryClient({
 				defaultOptions: {
 					queries: {
-						// staleTime: 60 * 1000,
-						// refetchInterval: 60 * 1000
+						// staleTime: 15 * 1000,
+						refetchInterval: 15 * 1000,
+						refetchIntervalInBackground: true,
+						refetchOnWindowFocus: false,
+						refetchOnMount: false,
 					},
 				},
 			})

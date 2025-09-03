@@ -3,7 +3,7 @@
 import useGetRqJoke from "@/app/data/tankstack-query/use-get-rq-joke"
 import { LoaderSpinner } from "../loader-spinner"
 
-export default function TankstackQueryJoke() {
+export default function TanstackQueryJoke() {
 	const { data, error, isRefetching, isPending, refetch } = useGetRqJoke()
 
 	return (
@@ -15,7 +15,7 @@ export default function TankstackQueryJoke() {
 					revalidate
 				</button>
 			</div>
-			{isPending && <p>Loading RQ Random num</p>}
+			{isPending && <p>Loading RQ joke</p>}
 			{error && <p>Error: {error.message}</p>}
 			<p className="font-bold">{data?.setup}</p>
 			<p className="font-bold">{data?.punchline}</p>

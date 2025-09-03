@@ -4,6 +4,7 @@ import UnestableCachedJsonUsers from "@/app/components/json-users/unestable-cach
 import SwrJsonUsers from "@/app/components/json-users/swr-json-users"
 import { SWRConfig } from "swr"
 import { getJsonUser } from "@/app/data/get-json-user"
+import TankstackQueryJsonUsers from "@/app/components/json-users/tanstack-query-json-users"
 
 export default function PlaceholderUsersPage() {
 	return (
@@ -27,7 +28,7 @@ export default function PlaceholderUsersPage() {
 					<SwrJsonUsers />
 				</SWRConfig>
 
-				{/* <TankStackQueryMongoDb /> */}
+				<TankstackQueryJsonUsers />
 			</main>
 		</div>
 	)

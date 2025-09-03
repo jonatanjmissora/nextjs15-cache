@@ -22,8 +22,8 @@ export default function SwrCloudinary() {
 			{/* {isLoading && <p>Loading SWR Cloudinary</p>} */}
 			{error || (!data?.success && <p>Error: {error?.message}</p>)}
 			{data?.response.map(asset => (
-				<span key={asset.public_id} className="font-bold">
-					name: {asset.display_name}
+				<span key={asset.public_id} className="font-bold truncate">
+					{asset.display_name}
 				</span>
 			))}
 		</div>

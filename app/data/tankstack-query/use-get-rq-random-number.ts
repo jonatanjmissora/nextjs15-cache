@@ -10,10 +10,6 @@ export default function useGetRqRandomNumber() {
 	const { data, error, isRefetching, isPending, refetch } = useQuery({
 		queryKey: ["random-number"],
 		queryFn: getRandomNumberFn,
-		// staleTime: 15 * 1000,
-		refetchInterval: 15 * 1000,
-		refetchIntervalInBackground: true,
-		refetchOnWindowFocus: false,
 	})
 
 	return {

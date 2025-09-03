@@ -1,6 +1,6 @@
 import SimpleFetchJoke from "@/app/components/joke/simple-fetch-joke"
 import SwrJoke from "@/app/components/joke/swr-joke"
-import TankstackQueryJoke from "@/app/components/joke/tankstack-query-joke"
+import TankstackQueryJoke from "@/app/components/joke/tanstack-query-joke"
 import UnestableCacheJoke from "@/app/components/joke/unestable-cache-joke"
 import { getJoke } from "@/app/data/get-joke"
 import { Suspense } from "react"

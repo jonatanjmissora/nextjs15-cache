@@ -23,7 +23,7 @@ export default function SwrJsonUsers() {
 			{error && <p>Error: {error.message}</p>}
 			{data?.map(user => (
 				<span key={user.id} className="font-bold">
-					name: {user.name}
+					{user.name}
 				</span>
 			))}
 		</div>

@@ -4,6 +4,7 @@ import SwrMongoDb from "../components/mongo-db/swr-mongodb"
 import SimpleFetchMongoDb from "../components/mongo-db/simple-fetch-mongodb"
 import { SWRConfig } from "swr"
 import { getMongoNotes } from "../data/get-mongo-notes"
+import TankStackQueryMongoDb from "../components/mongo-db/tanstack-query-mongodb"
 
 export default function Home() {
 	return (
@@ -27,7 +28,7 @@ export default function Home() {
 					<SwrMongoDb />
 				</SWRConfig>
 
-				{/* <TankStackQueryMongoDb />  */}
+				<TankStackQueryMongoDb /> 
 			</main>
 		</div>
 	)

@@ -4,6 +4,7 @@ import UnestableCacheCloudinary from "@/app/components/cloudinary/unestable-cach
 import SwrCloudinary from "@/app/components/cloudinary/swr-cloudinary"
 import { SWRConfig } from "swr"
 import { getCloudinary } from "@/app/data/get-assets"
+import TanStackQueryCloudinary from "@/app/components/cloudinary/tanstack-query-cloudinary"
 
 export default function CloudinaryPage() {
 	return (
@@ -27,7 +28,7 @@ export default function CloudinaryPage() {
 					<SwrCloudinary />
 				</SWRConfig>
 
-				{/* <TankStackQueryMongoDb /> */}
+				<TanStackQueryCloudinary />
 			</main>
 		</div>
 	)

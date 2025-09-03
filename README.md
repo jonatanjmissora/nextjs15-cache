@@ -28,3 +28,5 @@ export default function Page({ fallback }) {
     </SWRConfig>
   )
 }
+
+hacer un paso a paso para cada caso

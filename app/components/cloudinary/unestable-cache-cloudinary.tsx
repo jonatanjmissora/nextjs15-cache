@@ -9,7 +9,7 @@ async function UnestableCacheCloudinary() {
     <div className="flex flex-col gap-1 w-full border">
         <span className="text-xl font-bold">Unestable Cache</span>
         {assets.map((asset) => (
-            <span key={asset.public_id} className="font-bold">name: {asset.display_name}</span> 
+            <span key={asset.public_id} className="font-bold truncate">{asset.display_name}</span> 
         ))}
       </div>
   )
