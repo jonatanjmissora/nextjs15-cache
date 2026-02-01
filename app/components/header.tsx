@@ -30,12 +30,6 @@ export default function Header() {
 			>
 				Placeholder Users
 			</Link>
-			<Link
-				href="/cloudinary"
-				className={pathname === "/cloudinary" ? "font-bold border-b-2" : ""}
-			>
-				Cloudinary
-			</Link>
 		</header>
 	)
 }
