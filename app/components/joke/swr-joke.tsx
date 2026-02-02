@@ -10,7 +10,7 @@ export default function SwrJoke() {
 		<div className="flex flex-col gap-1 w-full">
 			<div className="text-xl font-bold flex justify-between items-center gap-1">
 				<span className="font-bold underline">Unstable Cache</span>
-				{isValidating && <LoaderSpinner />}
+				{data &&isValidating && <LoaderSpinner />}
 				<button
 					className="border rounded-lg p-3"
 					onClick={() => mutate("swr-joke")}
@@ -21,8 +21,16 @@ export default function SwrJoke() {
 			{/* si haces fallback en SWRConfig, no pongas el loading */}
 			{/* {isLoading && <p>Loading SWR Joke</p>} */}
 			{error && <p>Error: {error.message}</p>}
-			<p className="font-bold">{data?.setup}</p>
-			<p className="font-bold">{data?.punchline}</p>
+			{
+				data 
+				? (
+					<>
+						<p className="font-bold">{data?.setup}</p>
+						<p className="font-bold">{data?.punchline}</p>
+					</>
+				)
+				: isValidating && <p>Loading...</p>
+			}
 		</div>
 	)
 }

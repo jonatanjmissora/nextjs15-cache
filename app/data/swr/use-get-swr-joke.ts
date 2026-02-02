@@ -7,7 +7,14 @@ const getJokeFn = () => {
 }
 
 export default function useGetSwrJoke() {
-	const { data, error, isValidating } = useSWR("swr-joke", getJokeFn)
+	const { data, error, isValidating } = useSWR(
+		"swr-joke", 
+		getJokeFn,
+		{
+			fallbackData: undefined,
+			revalidateOnMount: true,
+		}
+	)
 
 	return { data, error, isValidating, mutate }
 }

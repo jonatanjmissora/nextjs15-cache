@@ -8,7 +8,14 @@ const getMongoNotesFn = () => {
 }
 
 export default function useGetSwrMongoNotes() {
-	const { data, error, isValidating } = useSWR("swr-mongodb", getMongoNotesFn)
+	const { data, error, isValidating } = useSWR(
+		"swr-mongodb", 
+		getMongoNotesFn,
+		{
+			fallbackData: undefined,
+			revalidateOnMount: true,
+		}
+	)
 
 	return { data, error, isValidating, mutate }
 }

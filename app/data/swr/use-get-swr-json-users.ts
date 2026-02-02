@@ -8,7 +8,14 @@ const getJsonUsersFn = () => {
 }
 
 export default function useGetSwrJsonUsers() {
-	const { data, error, isValidating } = useSWR("swr-json-users", getJsonUsersFn)
+	const { data, error, isValidating } = useSWR(
+		"swr-json-users", 
+		getJsonUsersFn,
+		{
+			fallbackData: undefined,
+			revalidateOnMount: true,
+		}
+	)
 
 	return { data, error, isValidating, mutate }
 }

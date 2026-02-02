@@ -3,10 +3,10 @@ import SwrJoke from "@/app/components/joke/swr-joke"
 import SwrMongoDb from "@/app/components/mongo-db/swr-mongodb"
 import SwrJsonUsers from "@/app/components/json-users/swr-json-users"
 import { SWRConfig } from "swr"
-import { getRandomNumber } from "@/app/data/get-random-number"
-import { getJoke } from "@/app/data/get-joke"
-import { getMongoNotes } from "@/app/data/get-mongo-notes"
-import { getJsonUser } from "@/app/data/get-json-user"
+// import { getRandomNumber } from "@/app/data/get-random-number"
+// import { getJoke } from "@/app/data/get-joke"
+// import { getMongoNotes } from "@/app/data/get-mongo-notes"
+// import { getJsonUser } from "@/app/data/get-json-user"
 
 export default function page() {
   return (
@@ -14,44 +14,44 @@ export default function page() {
       <main className="flex flex-col gap-4">
 
         <SWRConfig
-            value={{
-              fallback: {
-                "swr-random-number": getRandomNumber(),
-              },
-            }}
+            // value={{
+            //   fallback: {
+            //     "swr-random-number": getRandomNumber(),
+            //   },
+            // }}
         >
           <SwrRandomNumber />
         </SWRConfig>
 
         <SWRConfig
-            value={{
-              fallback: {
-                "swr-joke": getJoke(),
-              },
-            }}
-        >
+            // value={{
+            //   fallback: {
+            //     "swr-joke": getJoke(),
+            //   },
+            // }}
+         >
           <SwrJoke />
         </SWRConfig>
-
+ 
         <SWRConfig
-            value={{
-              fallback: {
-                "swr-mongodb": getMongoNotes(),
-              },
-            }}
+            // value={{
+            //   fallback: {
+            //     "swr-mongodb": getMongoNotes(),
+            //   },
+            // }}
         >
-          <SwrMongoDb />
-        </SWRConfig>
+           <SwrMongoDb />
+         </SWRConfig>
 
-        <SWRConfig
-            value={{
-              fallback: {
-                "swr-json-users": getJsonUser(),
-              },
-            }}
-        >
-          <SwrJsonUsers />
-        </SWRConfig>         
+         <SWRConfig
+            // value={{
+            //   fallback: {
+            //     "swr-json-users": getJsonUser(),
+            //   },
+            // }}
+         >
+           <SwrJsonUsers />
+         </SWRConfig>       
                 
       </main>
     </div>

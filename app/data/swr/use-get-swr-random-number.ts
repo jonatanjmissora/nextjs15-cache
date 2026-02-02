@@ -9,7 +9,11 @@ const getRandomNumberFn = () => {
 export default function useGetSwrRandomNumber() {
 	const { data, error, isValidating } = useSWR(
 		"swr-random-number",
-		getRandomNumberFn
+		getRandomNumberFn,
+		{
+			fallbackData: undefined,
+			revalidateOnMount: true,
+		}
 	)
 
 	return { data, error, isValidating, mutate }
