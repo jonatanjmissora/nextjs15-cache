@@ -7,9 +7,9 @@ export default function TanstackQueryJoke() {
 	const { data, error, isRefetching, isPending, refetch } = useGetRqJoke()
 
 	return (
-		<div className="flex flex-col gap-1 w-full border">
+		<div className="flex flex-col gap-1 w-full">
 			<div className="text-xl font-bold flex justify-between items-center gap-1">
-				TS Query
+				<span className="font-bold underline">Unstable cache</span>
 				{isRefetching && <LoaderSpinner />}
 				<button className="border rounded-lg p-3" onClick={() => refetch()}>
 					revalidate

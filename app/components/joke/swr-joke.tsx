@@ -7,9 +7,9 @@ export default function SwrJoke() {
 	const { data, error, isValidating, mutate } = useGetSwrJoke()
 
 	return (
-		<div className="flex flex-col gap-1 w-full border">
+		<div className="flex flex-col gap-1 w-full">
 			<div className="text-xl font-bold flex justify-between items-center gap-1">
-				SWR
+				<span className="font-bold underline">Unstable Cache</span>
 				{isValidating && <LoaderSpinner />}
 				<button
 					className="border rounded-lg p-3"

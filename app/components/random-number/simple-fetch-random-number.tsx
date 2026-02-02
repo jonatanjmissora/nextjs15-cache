@@ -5,8 +5,8 @@ async function SimpleFetchRandomNumber() {
     const randomNumber = await getRandomNumber()
 
   return (
-    <div className="flex flex-col gap-1 w-full border">
-        <span className="text-xl font-bold">Simple Fetch</span>
+    <div className="flex flex-col gap-1 w-full">
+        <span className="text-xl font-bold underline">Random number</span>
         <p>{randomNumber}</p>
       </div>
   )

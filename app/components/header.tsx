@@ -8,27 +8,27 @@ export default function Header() {
 	return (
 		<header className="w-full flex justify-center gap-4 p-8">
 			<Link
-				href="/random-number"
-				className={pathname === "/random-number" ? "font-bold border-b-2" : ""}
+				href="/"
+				className={pathname === "/" ? "font-bold border-b-2" : ""}
 			>
-				Random Number
+				Simple Fetch
 			</Link>
 			<Link
-				href="/joke"
-				className={pathname === "/joke" ? "font-bold border-b-2" : ""}
+				href="/unstable-cache"
+				className={pathname === "/unstable-cache" ? "font-bold border-b-2" : ""}
 			>
-				Joke
+				Unestable
 			</Link>
-			<Link href="/" className={pathname === "/" ? "font-bold border-b-2" : ""}>
-				Mongo DB
+			<Link href="/swr" className={pathname === "/swr" ? "font-bold border-b-2" : ""}>
+				SWR
 			</Link>
 			<Link
-				href="/placeholder-users"
+				href="/react-query"
 				className={
-					pathname === "/placeholder-users" ? "font-bold border-b-2" : ""
+					pathname === "/react-query" ? "font-bold border-b-2" : ""
 				}
 			>
-				Placeholder Users
+				React Query
 			</Link>
 		</header>
 	)

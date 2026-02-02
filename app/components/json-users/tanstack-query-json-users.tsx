@@ -7,9 +7,9 @@ export default function TanstackQueryJsonUsers() {
     const { data, error, isRefetching, isPending, refetch } = useGetRqJsonUsers()
 
     return (
-        <div className="flex flex-col gap-1 w-full border">
+        <div className="flex flex-col gap-1 w-full">
             <div className="text-xl font-bold flex justify-between items-center gap-1">
-                TS Query
+                <span className="font-bold underline">React query</span>
                 {isRefetching && <LoaderSpinner />}
                 <button
                     className="border rounded-lg p-3"
@@ -20,11 +20,13 @@ export default function TanstackQueryJsonUsers() {
             </div>
             {isPending && <p>Loading Tankstack Query Json users</p>}
             {error && <p>Error: {error.message}</p>}
+            <div className="flex flex-wrap gap-2">
             {data?.map(user => (
                 <span key={user.id} className="font-bold">
                     {user.name}
                 </span>
             ))}
+            </div>
         </div>
     )
 }

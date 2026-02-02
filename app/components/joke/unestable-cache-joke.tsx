@@ -5,8 +5,8 @@ async function UnestableCachedJoke() {
 	const joke = (await getCachedJoke()) as JokeType
 
 	return (
-		<div className="flex flex-col gap-1 w-full border">
-			<span className="text-xl font-bold">Unestable Cache</span>
+		<div className="flex flex-col gap-1 w-full">
+			<span className="text-xl font-bold underline">Unestable Cache</span>
 			<p className="font-bold">{joke.setup}</p>
 			<p className="font-bold">{joke.punchline}</p>
 		</div>

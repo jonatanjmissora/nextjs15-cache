@@ -7,9 +7,9 @@ export default function SwrRandomNumber() {
 	const { data, error, isValidating, mutate } = useGetSwrRandomNumber()
 
 	return (
-		<div className="flex flex-col gap-1 w-full border">
+		<div className="flex flex-col gap-1 w-full">
 			<div className="text-xl font-bold flex justify-between items-center gap-1">
-				SWR
+				<span className="font-bold underline">Random Number</span>
 				{isValidating && <LoaderSpinner />}
 				<button
 					className="border rounded-lg p-3"
